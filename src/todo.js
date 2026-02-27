@@ -1,11 +1,11 @@
 export class TodoGenerator{
-    constructor(title, discription, date, priority){
+    constructor(title, description, date, priority){
         this.id = crypto.randomUUID();
         this.title = title;
-        this.discription = discription;
+        this.description = description;
         this.date = date;
         this.priority = priority;
-    };
+    }
 
     get priority(){
         return this._priority;
@@ -14,5 +14,4 @@ export class TodoGenerator{
     set priority(value){
         this._priority = value;
     }
-
 };
