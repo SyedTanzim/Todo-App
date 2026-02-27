@@ -28,8 +28,17 @@ export class ControllerClass {
         }
     }
 
-    get DataArray() {
+    getData() {
         return this.dataArray;
+    }
+
+    saveData() {
+        const dataToSave = JSON.stringify(this.dataArray);
+        localStorage.setItem('projects', dataToSave);
+    }
+
+    deleteData(){
+        localStorage.clear();
     }
 
 };
