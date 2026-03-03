@@ -1,5 +1,6 @@
 import { ProjectGenerator } from "./project.js";
 import { TodoGenerator } from "./todo.js";
+import { dataManager } from "../data.js";
 
 export class ControllerClass {
 
@@ -14,7 +15,7 @@ export class ControllerClass {
     generateProject(title) {
         const project = new ProjectGenerator(title);
         this.dataArray.push(project);
-        return project;
+        dataManager.saveData(this.dataArray);
     }
 
     removeProject(removeId) {
