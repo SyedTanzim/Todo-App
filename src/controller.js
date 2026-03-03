@@ -7,6 +7,10 @@ export class ControllerClass {
         this.dataArray = [];
     }
 
+    getData() {
+        return this.dataArray;
+    }
+
     generateProject(title) {
         const project = new ProjectGenerator(title);
         this.dataArray.push(project);
@@ -27,18 +31,4 @@ export class ControllerClass {
             project.addTodo(todo);
         }
     }
-
-    getData() {
-        return this.dataArray;
-    }
-
-    saveData() {
-        const dataToSave = JSON.stringify(this.dataArray);
-        localStorage.setItem('projects', dataToSave);
-    }
-
-    deleteData(){
-        localStorage.clear();
-    }
-
 };
