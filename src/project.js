@@ -1,8 +1,8 @@
 export class ProjectGenerator {
-    constructor(title) {
-        this.id = crypto.randomUUID();
+    constructor(title, id = crypto.randomUUID(), todos = []) {
+        this.id = id;
         this.title = title;
-        this.todos = [];
+        this.todos = todos;
     }
 
     getTodo() {
