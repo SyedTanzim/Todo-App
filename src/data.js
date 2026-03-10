@@ -1,13 +1,17 @@
 import { ProjectGenerator } from "./project.js";
 
+/**
+ * Handles all data related operations
+ * Acts as a data layer
+ */
 class DataManager {
-
+    // Converts data to JSON and saves o LocalStorage
     saveData(data) {
         localStorage.setItem('projects', JSON.stringify(data));
     }
 
     /**
-     * Retreives data from localStorage or returns an empty array if nothing exists. 
+     * Retrieves data from localStorage or returns an empty array if nothing exists. 
      * Required for safe initialization of application
      */
     savedDataChecker() {
