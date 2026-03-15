@@ -77,6 +77,26 @@ class DomController {
             projectModal.close();
         })
     }
+
+    addProject(title) {
+        controller.generateProject(title);
+        this.renderApp();
+    }
+
+    submitProjectForm() {
+        const projectModal = document.querySelector('#projectModal');
+        const submitProjectBtn = document.querySelector('#submitProjectBtn');
+        const projectForm = document.querySelector('#projectForm');
+
+        submitProjectBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const title = document.querySelector('#projectTitle').value;
+            this.addProject(title);
+            projectModal.close();
+            projectForm.reset();
+            this.renderApp();
+        });
+    }
 }
 
 const dom = new DomController;
